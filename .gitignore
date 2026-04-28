@@ -1,0 +1,12 @@
+node_modules/
+backend/node_modules/
+backend/.env
+
+app/node_modules/
+app/.expo/
+app/.expo-shared/
+
+.DS_Store
+
+.env
+.env.*
