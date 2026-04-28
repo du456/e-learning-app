@@ -26,8 +26,8 @@ app.use('/api/instructors', instructorRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/notifications', notificationRoutes);
 
-app.get('/api/health', (req, res) => {
-  res.json({ success: true, message: 'API is running' });
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'E-Learning API is live' });
 });
 
 app.use(errorHandler);
