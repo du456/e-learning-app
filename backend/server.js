@@ -26,8 +26,20 @@ app.use('/api/instructors', instructorRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/notifications', notificationRoutes);
 
-app.get('/', (req, res) => {
-  res.json({ success: true, message: 'E-Learning API is live' });
+// Health check (USE THIS INSTEAD OF "/")
+app.get('/api/health', (req, res) => {
+  res.json({
+    success: true,
+    message: 'E-Learning API is running'
+  });
+});
+
+// Optional base API route (fixes "Cannot GET /api")
+app.get('/api', (req, res) => {
+  res.json({
+    success: true,
+    message: 'API base route working'
+  });
 });
 
 app.use(errorHandler);
